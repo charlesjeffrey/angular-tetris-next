@@ -1,0 +1,13 @@
+.task-card {
+    margin: 20px 10px;
+}
+
+.task-notes
+ {
+   margin: auto;
+ }
+
+.delete
+ {
+   float: right;
+ }

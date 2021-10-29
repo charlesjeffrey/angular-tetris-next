@@ -1,0 +1,47 @@
+<div class="tasks-panel">
+
+  <mat-tab-group>
+
+    <mat-tab label="Late">
+      <app-tasks-card-list [tasks]="lateTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Today">
+      <app-tasks-card-list [tasks]="todayTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="7 Days">
+      <app-tasks-card-list [tasks]="sevenDaysTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="30 Days">
+      <app-tasks-card-list [tasks]="thirtyDaysTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Once">
+      <app-tasks-card-list [tasks]="onceTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Daily">
+      <app-tasks-card-list [tasks]="dailyTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Weekly">
+      <app-tasks-card-list [tasks]="weeklyTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Monthly">
+      <app-tasks-card-list [tasks]="monthlyTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Yearly">
+      <app-tasks-card-list [tasks]="yearlyTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+    <mat-tab label="Custom">
+      <app-tasks-card-list [tasks]="customTasks$ | async"></app-tasks-card-list>
+    </mat-tab>
+
+  </mat-tab-group>
+
+</div>

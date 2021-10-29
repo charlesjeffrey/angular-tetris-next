@@ -1,0 +1,95 @@
+<h2 mat-dialog-title>{{ task.title }}</h2>
+
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+    <input matInput placeholder="Task Title" formControlName="title">
+    <input type="hidden" formControlName="isDeleted">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Select category" formControlName="category">
+      <mat-option value="groceries">
+        Groceries</mat-option>
+      <mat-option value="bills">
+        Bills</mat-option>
+      <mat-option value="appointment">
+        Appointment</mat-option>
+      <mat-option value="event">
+        Event</mat-option>
+      <mat-option value="school">
+        School</mat-option>
+      <mat-option value="nutrition">
+        Nutrition</mat-option>
+      <mat-option value="pets">
+        Pets</mat-option>
+      <mat-option value="hygiene">
+        Hygiene</mat-option>
+      <mat-option value="family">
+        Family</mat-option>
+      <mat-option value="other">
+        Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <mat-select placeholder="Select Schedule" formControlName="schedule">
+      <mat-option value="once">
+        Once</mat-option>
+      <mat-option value="daily">
+        Daily</mat-option>
+      <mat-option value="weekly">
+        Weekly</mat-option>
+      <mat-option value="monthly">
+        Monthly</mat-option>
+      <mat-option value="yearly">
+        Yearly</mat-option>
+      <mat-option value="custom">
+        Custom</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <input matInput [matDatepicker]="myDatepicker" #searchInput formControlName="releasedAt">
+
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker">
+
+    </mat-datepicker-toggle>
+
+    <mat-datepicker #myDatepicker></mat-datepicker>
+
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <textarea matInput placeholder="Notes" formControlName="notes">
+
+        </textarea>
+
+  </mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+  <button class="mat-raised-button" #closeButton (click)="close()">
+    Close
+  </button>
+
+  <div class="spacer"></div>
+
+  <button class="mat-raised-button mat-primary" #saveButton (click)="save()">
+    Save
+  </button>
+
+  <div class="spacer"></div>
+
+  <button class="mat-raised-button mat-accent" #deleteButton (click)="delete()">
+    Delete
+  </button>
+
+</mat-dialog-actions>
