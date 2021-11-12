@@ -1,10 +1,9 @@
-import { Task } from './../model/task';
+import { ITask } from './../model/task';
 import { TasksService } from './../services/tasks.service';
-import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 import { filter, tap } from 'rxjs/operators';
-
 
 
 @Component({
@@ -19,15 +18,14 @@ export class TasksCardListComponent implements OnInit {
   tasks: any;
 
   @Output()
-  private tasksChanged = new EventEmitter();
+  private taskChanged = new EventEmitter();
 
   constructor(private dialog: MatDialog, private tasksService: TasksService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 
-  editTask(task: Task) {
+  editTask(task: ITask) {
 
     const dialogConfig = new MatDialogConfig();
 
@@ -40,21 +38,63 @@ export class TasksCardListComponent implements OnInit {
 
     dialogRef.afterClosed()
       .pipe(
-        filter(val => !!val),
-        tap(() => this.tasksChanged.emit())
+    //    //filter(val => !!val),
+        tap(() => console.log("Dialog closing...")),
+        tap(() => this.taskChanged.emit())
       )
       .subscribe(
-        //Not Working
-        val => console.log("Dialog output:", val)
+        //Not Working Update: filter(val => !!val) causing problems.
+        //val => console.log("Dialog output:", val)
       );
   }
 
-  deleteTask(task: Task) {
-    this.tasksService.deleteTask(task.id, task)
+  deleteTask(task: ITask) {
+    this.tasksService.deleteTask(task)
   }
 
   createTask() {
-    this.tasksService.createTask()
+    const dialogConfig = new MatDialogConfig();
+
+    let fillerTask: ITask = {
+      id: "",
+      category: "",
+      title: "",
+      releasedAt: new Date,
+      notes: "",
+      schedule: "",
+      isDeleted: false,
+      dueDate: new Date,
+      isDueToday: false,
+      startWeekday: "",
+      endWeekday: "",
+      startDate: "",
+      endDate: "",
+      startHour: "",
+      endHour: "",
+      startMonth: "",
+      endMonth: "",
+      startYear: "",
+      endYear: "",
+      isLate: false
+    };
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = "";
+
+    const dialogRef = this.dialog.open(TaskDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed()
+      .pipe(
+        //filter(val => !!val),
+        tap(() => console.log("Dialog closed...")),
+        tap(() => this.taskChanged.emit())
+      )
+      .subscribe(
+        //Not Working
+        //val => console.log("Dialog output:", val)
+      );
   }
 
 }

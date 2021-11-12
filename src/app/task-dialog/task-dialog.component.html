@@ -6,13 +6,20 @@
     <input matInput placeholder="Task Title" formControlName="title">
     <input type="hidden" formControlName="isDeleted">
   </mat-form-field>
+  <br>
 
   <mat-form-field>
     <mat-select placeholder="Select category" formControlName="category">
+      <mat-option value="exercise">
+        Exercise</mat-option>
+      <mat-option value="chore">
+        Chore</mat-option>
+      <mat-option value="pool">
+        Pool</mat-option>
       <mat-option value="groceries">
         Groceries</mat-option>
-      <mat-option value="bills">
-        Bills</mat-option>
+      <mat-option value="bill">
+        Bill</mat-option>
       <mat-option value="appointment">
         Appointment</mat-option>
       <mat-option value="event">
@@ -31,6 +38,9 @@
         Other</mat-option>
     </mat-select>
   </mat-form-field>
+  <br>
+
+
 
   <mat-form-field>
 
@@ -50,46 +60,38 @@
     </mat-select>
 
   </mat-form-field>
+  <br>
+
 
   <mat-form-field>
-
-    <input matInput [matDatepicker]="myDatepicker" #searchInput formControlName="releasedAt">
-
-    <mat-datepicker-toggle matSuffix [for]="myDatepicker">
-
-    </mat-datepicker-toggle>
-
-    <mat-datepicker #myDatepicker></mat-datepicker>
-
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate formControlName="startDate" placeholder="Start date" #startDate>
+      <input matEndDate formControlName="endDate" placeholder="End date">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+    <mat-error *ngIf="form.controls.startDate.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+    <mat-error *ngIf="form.controls.endDate.hasError('matEndDateInvalid')">Invalid end date</mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <br>
 
+  <mat-form-field>
     <textarea matInput placeholder="Notes" formControlName="notes">
-
-        </textarea>
-
+    </textarea>
   </mat-form-field>
-
 
 </mat-dialog-content>
 
-<mat-dialog-actions>
-
-  <button class="mat-raised-button" #closeButton (click)="close()">
+<mat-dialog-actions align="end">
+  <button mat-button class="mat-raised-button" #closeButton (click)="close()">
     Close
   </button>
-
-  <div class="spacer"></div>
-
-  <button class="mat-raised-button mat-primary" #saveButton (click)="save()">
+  <button mat-button class="mat-raised-button mat-primary" #saveButton (click)="save()">
     Save
   </button>
-
-  <div class="spacer"></div>
-
-  <button class="mat-raised-button mat-accent" #deleteButton (click)="delete()">
-    Delete
+  <button mat-button class="mat-raised-button mat-accent" #createButton (click)="create()">
+    Create
   </button>
-
 </mat-dialog-actions>

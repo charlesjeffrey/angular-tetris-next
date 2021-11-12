@@ -4,6 +4,8 @@
 
     <mat-card-title>{{task.title}}</mat-card-title>
 
+    <div class="spacer"></div>
+
     <span>{{ task.dueDate | date}}</span>
 
   </mat-card-header>
@@ -14,32 +16,32 @@
     <div>Schedule: {{task.schedule | titlecase}}</div>
     <div>Notes: <span class="task-notes">{{task.notes}}</span></div>
     <div>Category: {{task.category | titlecase}}</div>
-    <div>Task Creation Date: {{task.releasedAt | date}}</div>
-    <div>Task ID: {{task.id}}</div>
-    <div>Deleted: {{task.isDeleted}}</div>
-    <div>Task Due Date: {{task.dueDate | date}}</div>
-    <div>Due Today: {{task.isDueToday}}</div>
+    <!--<div>Task Creation Date: {{task.releasedAt | date}}</div>-->
+
+    <!--<div>Deleted: {{task.isDeleted}}</div>-->
+    <div>Task Start Date: {{task.startDate | date}}</div>
+    <div>Task End Date: {{task.endDate | date}}</div>
+
+    <!--<div>Task ID: {{task.id}}</div>
+      <div>Due Today: {{task.isDueToday}}</div>
+    <div>Late: {{task.isLate}}</div>
+    <div>Deleted: {{task.isDeleted}}</div>-->
   </mat-card-content>
 
-  <mat-card-actions>
-
+  <mat-card-actions align="end">
     <!--<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/tasks', task.id]">
       VIEW TASK
     </button>-->
+
     <button mat-button class="mat-raised-button mat-primary" (click)="createTask()">
       NEW TASK
     </button>
-
     <button mat-button class="mat-raised-button mat-primary" (click)="editTask(task)">
-      EDIT TASK
+      EDIT
     </button>
-
-
-
-    <button class="mat-raised-button mat-accent delete" (click)="deleteTask(task)">
-      DELETE TASK
+    <button mat-button class="mat-raised-button mat-accent" (click)="deleteTask(task)">
+      DELETE
     </button>
-
   </mat-card-actions>
 
 </mat-card>

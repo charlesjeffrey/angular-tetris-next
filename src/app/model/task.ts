@@ -1,5 +1,5 @@
-export interface Task {
-  id: number;
+export interface ITask {
+  id: any;
   category: string;
   title: string;
   releasedAt: Date;

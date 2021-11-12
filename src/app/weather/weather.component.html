@@ -1,0 +1,132 @@
+<div class="marquee">
+  <p>
+    {{ currentWeather.name }}, {{currentWeather.sys.country }}
+    <span *ngFor="let info of currentWeather.weather">
+      <span>
+        <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+      </span>
+    </span>
+     {{ currentWeather.dt | convertUnixTime }}
+    <span *ngFor="let info of currentWeather.weather">
+      <span>
+        <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+      </span>
+    </span>
+    <span *ngFor="let info of currentWeather.weather">
+      <span>{{ info.main }}
+        <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+      </span>
+    </span>
+    Cloudiness: {{ currentWeather.clouds.all }}%
+    <span *ngFor="let info of currentWeather.weather">
+      <span>
+        <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+      </span>
+    </span>
+Temperature: {{ currentWeather.main.temp }}° F
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Feels Like: {{ currentWeather.main.feels_like }}° F
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Humidity: {{ currentWeather.main.humidity }}%
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Pressure: {{ currentWeather.main.pressure }} hPa
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Wind Speed: {{ currentWeather.wind.speed }} miles/hour
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Gusts Up To: {{ currentWeather.wind.gust }} miles/hour
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Wind Degrees: {{ currentWeather.wind.deg }}°
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Sunrise: {{ currentWeather.sys.sunrise | convertUnixTime }}
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Sunset: {{ currentWeather.sys.sunset | convertUnixTime }}
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Longitude: {{ currentWeather.coord.lon }}°
+<span *ngFor="let info of currentWeather.weather">
+  <span>
+    <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+  </span>
+</span>
+Latitude: {{ currentWeather.coord.lat }}°
+</div>
+
+<!--
+<mat-card class="weather-card">
+
+  <span class="mat-headline">Current Weather
+    <span *ngFor="let info of currentWeather.weather">
+      <img mat-card-avatar style="float: right; zoom: 200%" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+    </span>
+  </span>
+
+  <mat-card-header>
+    <mat-card-title>{{ currentWeather.name }}, {{currentWeather.sys.country }}</mat-card-title>
+    <mat-card-subtitle>{{ currentWeather.dt | convertUnixTime }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <span *ngFor="let info of currentWeather.weather">
+      <span>{{ info.main }}
+        <img mat-card-avatar src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
+      </span>
+    </span>
+    <div>Cloudiness: {{ currentWeather.clouds.all }}%</div>
+    <div>Temperature: {{ currentWeather.main.temp }}° F</div>
+    <div>Feels Like: {{ currentWeather.main.feels_like }}° F</div>
+    <div>Humidity: {{ currentWeather.main.humidity }}%</div>
+    <div>Pressure: {{ currentWeather.main.pressure }} hPa</div>
+    <div>Wind Speed: {{ currentWeather.wind.speed }} miles/hour</div>
+    <div>Gusts Up To: {{ currentWeather.wind.gust }} miles/hour</div>
+    <div>Wind Degrees: {{ currentWeather.wind.deg }}°</div>
+    <div>Sunrise: {{ currentWeather.sys.sunrise | convertUnixTime }}</div>
+    <div>Sunset: {{ currentWeather.sys.sunset | convertUnixTime }}</div>
+    <div>
+      Longitude: {{ currentWeather.coord.lon }}°, Latitude: {{ currentWeather.coord.lat }}°
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+
+  </mat-card-actions>
+
+  <mat-card-footer>
+
+  </mat-card-footer>
+</mat-card>
+-->

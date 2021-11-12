@@ -19,6 +19,7 @@ app.route('/api/tasks/:id').get(getTaskById);
 
 const httpServer: any = app.listen(9000, () => {
   console.log("HTTP REST API Server running at http://localhost:" + httpServer.address().port);
+  return true;
 });
 
 

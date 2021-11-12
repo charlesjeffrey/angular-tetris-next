@@ -1,26 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from "../model/task";
+import { ITask } from "../model/task";
 import { Observable } from "rxjs";
 import { TasksService } from "../services/tasks.service";
+import { IWeather } from '../model/weather';
+import { WeatherService } from '../services/weather.service';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  lateTasks$!: Observable<Task[]>;
-  todayTasks$!: Observable<Task[]>;
-  sevenDaysTasks$!: Observable<Task[]>;
-  thirtyDaysTasks$!: Observable<Task[]>;
-  weeklyTasks$!: Observable<Task[]>;
-  dailyTasks$!: Observable<Task[]>;
-  onceTasks$!: Observable<Task[]>;
-  monthlyTasks$!: Observable<Task[]>;
-  yearlyTasks$!: Observable<Task[]>;
-  customTasks$!: Observable<Task[]>;
 
-  constructor(private tasksService: TasksService) { }
+export class HomeComponent implements OnInit {
+  lateTasks$!: Observable<ITask[]>;
+  todayTasks$!: Observable<ITask[]>;
+  sevenDaysTasks$!: Observable<ITask[]>;
+  thirtyDaysTasks$!: Observable<ITask[]>;
+  weeklyTasks$!: Observable<ITask[]>;
+  dailyTasks$!: Observable<ITask[]>;
+  onceTasks$!: Observable<ITask[]>;
+  monthlyTasks$!: Observable<ITask[]>;
+  yearlyTasks$!: Observable<ITask[]>;
+  customTasks$!: Observable<ITask[]>;
+
+  weather$!: Observable<IWeather>;
+
+
+  constructor(private tasksService: TasksService, private weatherService: WeatherService) { }
 
   ngOnInit() {
     this.lateTasks$ = this.tasksService.selectLateTasks();
@@ -33,5 +39,11 @@ export class HomeComponent implements OnInit {
     this.monthlyTasks$ = this.tasksService.selectMonthlyTasks();
     this.yearlyTasks$ = this.tasksService.selectYearlyTasks();
     this.customTasks$ = this.tasksService.selectCustomTasks();
+
+    this.weather$ = this.weatherService.weather$;
+
+    this.weatherService.getCurrentWeather();
+
   }
+
 }

@@ -1,5 +1,8 @@
 .task-card {
-    margin: 20px 10px;
+  display: block;
+max-width: auto;
+  margin: 1em auto;
+
 }
 
 .task-notes
@@ -7,7 +10,14 @@
    margin: auto;
  }
 
-.delete
+ .spacer
  {
-   float: right;
+   flex: 1;
  }
+
+
+
+
+button {
+  min-width: 100px;
+}

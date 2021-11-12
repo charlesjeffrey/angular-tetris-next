@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from './services/tasks.service';
+import { WeatherService } from './services/weather.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,13 @@ import { TasksService } from './services/tasks.service';
 export class AppComponent implements OnInit {
 
 
-  constructor(private tasksService: TasksService) {
+  constructor(private tasksService: TasksService, private weatherService: WeatherService) {
 
   }
 
   ngOnInit() {
     this.tasksService.init();
+    this.weatherService.init();
   }
 
 }
