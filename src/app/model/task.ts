@@ -7,11 +7,11 @@ export interface ITask {
   schedule: string;
   isDeleted: boolean;
   dueDate: Date;
-  isDueToday: false;
+  isDueToday: boolean;
   startWeekday: string;
   endWeekday: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   startHour: string;
   endHour: string;
   startMonth: string;
@@ -19,4 +19,7 @@ export interface ITask {
   startYear: string;
   endYear: string;
   isLate: boolean;
+  isNew: boolean;
+  isComplete: boolean;
+  isRecurring: boolean;
 }

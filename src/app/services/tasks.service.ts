@@ -5,7 +5,7 @@ import { ITask } from "../model/task";
 import { catchError, filter, map, tap } from "rxjs/operators";
 import { MessageService } from "./message.service";
 import { fromPromise } from "rxjs/internal/observable/fromPromise";
-import { isToday, addWeeks, isWithinInterval, subDays, addMonths, isBefore, addDays } from "date-fns";
+import { isToday, addWeeks, isWithinInterval, subDays, addMonths, isBefore, addDays, addYears } from "date-fns";
 
 @Injectable()
 export class TasksService {
@@ -49,7 +49,50 @@ export class TasksService {
     }));
   }
 
+  createRecurringTask(task: ITask): Observable<any> {
+
+    console.log("create recurring task executing...")
+    switch (task.schedule) {
+      case "daily":
+        console.log("daily case...");
+        task.startDate = addDays(new Date(task.startDate), 1);
+        task.endDate = addDays(new Date(task.endDate), 1);
+        break;
+      case "weekly":
+        console.log("weekly case...");
+        task.startDate = addWeeks(new Date(task.startDate), 1);
+        task.endDate = addWeeks(new Date(task.endDate), 1);
+        break;
+      case "monthly":
+        console.log("monthly case...");
+        task.startDate = addMonths(new Date(task.startDate), 1);
+        task.endDate = addMonths(new Date(task.endDate), 1);
+        break;
+      case "yearly":
+        console.log("yearly case...");
+        task.startDate = addYears(new Date(task.startDate), 1);
+        task.endDate = addYears(new Date(task.endDate), 1);
+        break;
+    }
+
+
+    fromPromise(fetch(`${this.tasksUrl}`+task.id, {
+      method: 'PUT',
+      body: JSON.stringify(task),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }));
+
+    this.init();
+
+    return of(1);
+  }
+
   createTask(task: ITask): Observable<any> {
+
+    (task.schedule == "once") ? (task.isRecurring = false) : ""
+
     fromPromise(fetch(`${this.tasksUrl}`, {
       method: 'POST',
       body: JSON.stringify(task),
@@ -66,12 +109,26 @@ export class TasksService {
 
   }
 
-  deleteTask(changes: ITask): Observable<any> {
+  deleteTask(taskId: string): Observable<any> {
+
+    fromPromise(fetch(`${this.tasksUrl + taskId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }));
+
+    this.init();
+
+    return of(1)
+  }
+
+  completeTask(changes: ITask): Observable<any> {
     const tasks = this.subject.getValue();
     const taskIndex = tasks.findIndex(task => task.id == changes.id);
     const newTasks = tasks.slice(0);
 
-    changes.isDeleted = true;
+    changes.isComplete = true;
 
     newTasks[taskIndex] = {
       ...tasks[taskIndex],
@@ -90,13 +147,12 @@ export class TasksService {
 
 
   }
-
   selectLateTasks() {
     const today = new Date();
     console.log(this.tasks$)
     return this.tasks$.pipe(
       map(tasks => tasks
-        .filter(task => (isBefore(new Date(task.endDate), today)) && !task.isDeleted))
+        .filter(task => (isBefore(new Date(task.endDate), today)) && !task.isComplete))
     );
   }
 
@@ -104,7 +160,7 @@ export class TasksService {
     return this.tasks$
       .pipe(
         map(tasks => tasks
-          .filter(task => ((isToday(new Date(task.dueDate)) || task.schedule == "daily") && !task.isDeleted))
+          .filter(task => ((isToday(new Date(task.startDate)) || task.schedule == "daily") && !task.isComplete))
         )
       );
   }
@@ -116,7 +172,7 @@ export class TasksService {
     return this.tasks$
       .pipe(
         map(tasks => tasks
-          .filter(task => (isWithinInterval(new Date(task.dueDate), { start: yesterday, end: seven_days }))
+          .filter(task => (isWithinInterval(new Date(task.endDate), { start: yesterday, end: seven_days }))
           )
         )
       );
@@ -129,7 +185,7 @@ export class TasksService {
     return this.tasks$
       .pipe(
         map(tasks => tasks
-          .filter(task => (isWithinInterval(new Date(task.dueDate), { start: yesterday, end: thirty_days }))))
+          .filter(task => (isWithinInterval(new Date(task.endDate), { start: yesterday, end: thirty_days }))))
       );
   }
   // isBefore(new Date(task.dueDate), addWeek(new Date(task.dueDate), 1) == true
@@ -161,7 +217,7 @@ export class TasksService {
     return this.tasks$
       .pipe(
         map(tasks => tasks
-          .filter(task => task.schedule == schedule && !task.isDeleted)),
+          .filter(task => task.schedule == schedule && !task.isComplete)),
       );
   }
 

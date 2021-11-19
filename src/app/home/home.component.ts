@@ -25,6 +25,9 @@ export class HomeComponent implements OnInit {
 
   weather$!: Observable<IWeather>;
 
+  showSave$!: Observable<boolean>;
+  showDelete$!: Observable<boolean>;
+
 
   constructor(private tasksService: TasksService, private weatherService: WeatherService) { }
 

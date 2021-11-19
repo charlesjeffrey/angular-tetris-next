@@ -1,4 +1,5 @@
-<mat-card *ngFor="let task of tasks" class="task-card mat-elevation-z10">
+<div class="flex-container">
+<mat-card *ngFor="let task of tasks" class="task-card mat-elevation-z10" class="flex-item">
 
   <mat-card-header>
 
@@ -12,15 +13,15 @@
 
   <!--<img mat-card-image [src]="task.iconUrl">-->
 
-  <mat-card-content>
+  <mat-card-content style="text-align: left;">
     <div>Schedule: {{task.schedule | titlecase}}</div>
     <div>Notes: <span class="task-notes">{{task.notes}}</span></div>
     <div>Category: {{task.category | titlecase}}</div>
     <!--<div>Task Creation Date: {{task.releasedAt | date}}</div>-->
 
     <!--<div>Deleted: {{task.isDeleted}}</div>-->
-    <div>Task Start Date: {{task.startDate | date}}</div>
-    <div>Task End Date: {{task.endDate | date}}</div>
+    <div>Start Date: {{task.startDate | date}}</div>
+    <div>End Date: {{task.endDate | date}}</div>
 
     <!--<div>Task ID: {{task.id}}</div>
       <div>Due Today: {{task.isDueToday}}</div>
@@ -33,15 +34,25 @@
       VIEW TASK
     </button>-->
 
-    <button mat-button class="mat-raised-button mat-primary" (click)="createTask()">
-      NEW TASK
+    <button title="Create Task" mat-mini-fab color="primary" class="mat-raised-button mat-primary" (click)="createTask()">
+      <mat-icon>add</mat-icon>
     </button>
-    <button mat-button class="mat-raised-button mat-primary" (click)="editTask(task)">
-      EDIT
+    <button title="View Task" mat-mini-fab color="primary" class="mat-raised-button mat-primary" (click)="viewTask(task)">
+      <mat-icon>visibility</mat-icon>
     </button>
-    <button mat-button class="mat-raised-button mat-accent" (click)="deleteTask(task)">
-      DELETE
+    <button title="Edit Task" mat-mini-fab color="primary" class="mat-raised-button mat-primary" (click)="editTask(task)" aria-label="Example icon button with an edit icon">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button title="Complete Task - Marks task as done and creates the next instance of this recurring task." mat-mini-fab color="primary" class="mat-raised-button mat-primary" (click)="completeTask(task)"
+      aria-label="Example icon button with a complete icon">
+      <mat-icon>check_mark</mat-icon>
+    </button>
+    <button title="Delete Task" mat-mini-fab color="accent" (click)="deleteTask(task)" aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
     </button>
   </mat-card-actions>
 
 </mat-card>
+
+
+</div>

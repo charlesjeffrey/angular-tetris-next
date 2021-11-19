@@ -4,19 +4,26 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-card-actions[align="end"] .mat-button:last-child,
 .mat-card-actions[align="end"] .mat-raised-button:last-child,
-.mat-card-actions[align="end"] .mat-stroked-button:last-child {
+.mat-card-actions[align="end"] .mat-stroked-button:last-child,
+.mat-card-actions[align="end"] .mat-fab:last-child,
+.mat-card-actions[align="end"] .mat-mini-fab:last-child
+{
   margin: 0 8px;
 }
 
 .mat-card-actions[align="start"] .mat-button:last-child,
 .mat-card-actions[align="start"] .mat-raised-button:last-child,
-.mat-card-actions[align="start"] .mat-stroked-button:last-child {
+.mat-card-actions[align="start"] .mat-stroked-button:last-child,
+.mat-card-actions[align="start"] .mat-fab:last-child,
+.mat-card-actions[align="end"] .mat-mini-fab:last-child {
   margin: 0 8px;
 }
 
 .mat-card-actions .mat-button:last-child,
 .mat-card-actions .mat-raised-button:last-child,
-.mat-card-actions .mat-stroked-button:last-child {
+.mat-card-actions .mat-stroked-button:last-child,
+.mat-card-actions .mat-fab,
+.mat-card-actions .mat-mini-fab {
   margin: 0 8px;
 }
 
@@ -31,8 +38,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
         .marquee p {
             position: absolute;
-            width: 150%;
-            height: 100%;
+            width: 100%;
+            height: auto;
             margin: 0;
             line-height: 50px;
             text-align: center;

@@ -17,42 +17,49 @@
         <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
       </span>
     </span>
+    <!--
     Cloudiness: {{ currentWeather.clouds.all }}%
     <span *ngFor="let info of currentWeather.weather">
       <span>
         <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
       </span>
-    </span>
+    </span>-->
 Temperature: {{ currentWeather.main.temp }}° F
 <span *ngFor="let info of currentWeather.weather">
   <span>
     <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
   </span>
 </span>
+<!--
 Feels Like: {{ currentWeather.main.feels_like }}° F
 <span *ngFor="let info of currentWeather.weather">
   <span>
     <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
   </span>
-</span>
+</span>-->
 Humidity: {{ currentWeather.main.humidity }}%
+
 <span *ngFor="let info of currentWeather.weather">
   <span>
     <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
   </span>
 </span>
+<!--
 Pressure: {{ currentWeather.main.pressure }} hPa
 <span *ngFor="let info of currentWeather.weather">
   <span>
     <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
   </span>
-</span>
+</span>-->
+
 Wind Speed: {{ currentWeather.wind.speed }} miles/hour
+<!--
 <span *ngFor="let info of currentWeather.weather">
   <span>
     <img style="height: 30px" src="http://openweathermap.org/img/wn/{{ info.icon }}@2x.png">
   </span>
 </span>
+
 Gusts Up To: {{ currentWeather.wind.gust }} miles/hour
 <span *ngFor="let info of currentWeather.weather">
   <span>
@@ -84,7 +91,7 @@ Longitude: {{ currentWeather.coord.lon }}°
   </span>
 </span>
 Latitude: {{ currentWeather.coord.lat }}°
-</div>
+</div>-->
 
 <!--
 <mat-card class="weather-card">

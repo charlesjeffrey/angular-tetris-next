@@ -43,10 +43,11 @@ export class TaskDialogComponent implements AfterViewInit {
       endDate: [task.endDate, Validators.required],
       category: [task.category, Validators.required],
       releasedAt: [today, Validators.required],
-      //releasedAt: [moment(), Validators.required],
       notes: [task.notes],
       schedule: [task.schedule, Validators.required],
-      isDeleted: [task.isDeleted, Validators.required]
+      isDeleted: [task.isDeleted, Validators.required],
+      isNew: [task.isNew],
+      isRecurring: [task.isRecurring]
 
     });
 
@@ -73,6 +74,8 @@ export class TaskDialogComponent implements AfterViewInit {
   }
 
   create() {
+    this.form.removeControl('isNew');
+
     this.tasksService.createTask(this.form.value).pipe(
       tap(() => console.log("Creating new task..."))
     )

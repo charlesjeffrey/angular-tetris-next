@@ -25,6 +25,19 @@ export class TasksCardListComponent implements OnInit {
   ngOnInit(): void { }
 
 
+  completeTask(task: ITask) {
+
+    console.log("task.isRecurring: " + task.isRecurring);
+
+    task.isRecurring ? this.tasksService.createRecurringTask(task) : this.tasksService.deleteTask(task.id);
+
+  }
+
+
+  viewTask(task: ITask) {
+
+  }
+
   editTask(task: ITask) {
 
     const dialogConfig = new MatDialogConfig();
@@ -49,7 +62,7 @@ export class TasksCardListComponent implements OnInit {
   }
 
   deleteTask(task: ITask) {
-    this.tasksService.deleteTask(task)
+    this.tasksService.deleteTask(task.id)
   }
 
   createTask() {
@@ -67,21 +80,24 @@ export class TasksCardListComponent implements OnInit {
       isDueToday: false,
       startWeekday: "",
       endWeekday: "",
-      startDate: "",
-      endDate: "",
+      startDate: new Date,
+      endDate: new Date,
       startHour: "",
       endHour: "",
       startMonth: "",
       endMonth: "",
       startYear: "",
       endYear: "",
-      isLate: false
+      isLate: false,
+      isNew: true,
+      isComplete: false,
+      isRecurring: true
     };
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    dialogConfig.data = "";
+    dialogConfig.data = fillerTask;
 
     const dialogRef = this.dialog.open(TaskDialogComponent, dialogConfig);
 

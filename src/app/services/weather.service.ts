@@ -9,7 +9,7 @@ import { catchError, delayWhen, filter, map, retryWhen, startWith, switchMap, ta
 })
 export class WeatherService {
   private apiKey = 'd4f2c452bb1f43f8c07d9f3f7c57c76d';
-  private weatherUrl = '//api.openweathermap.org/data/2.5/weather?zip=34695,us&units=imperial&appid=' + this.apiKey;
+  private weatherUrl = '//api.openweathermap.org/data/2.5/weather?zip=34668,us&units=imperial&appid=' + this.apiKey;
 
   private subject = new BehaviorSubject<IWeather>({
     coord: [],

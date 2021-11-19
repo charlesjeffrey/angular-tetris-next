@@ -9,40 +9,34 @@
       "releasedAt": "2021-11-12T17:55:12.236Z",
       "notes": "48oz of Algaecide. Three full Solo cups.",
       "schedule": "weekly",
-      "isDeleted": false
+      "isDeleted": false,
+      "isRecurring": true
     },
     {
       "id": 13,
       "title": "Norton Subscription Payment",
-      "startDate": "2022-02-15T05:00:00.000Z",
+      "startDate": "2022-01-15T05:00:00.000Z",
       "endDate": "2022-02-15T05:00:00.000Z",
       "category": "bill",
-      "releasedAt": "2021-11-12T16:46:56.740Z",
+      "releasedAt": "2021-11-17T12:44:15.794Z",
       "notes": "Norton™ 360 Deluxe $104.99",
       "schedule": "yearly",
-      "isDeleted": false
+      "isDeleted": false,
+      "isNew": null,
+      "isRecurring": true
     },
     {
       "id": 14,
       "title": "Add Shock to Pool",
-      "startDate": "2021-11-05T04:00:00.000Z",
-      "endDate": "2021-11-05T04:00:00.000Z",
+      "startDate": "2021-11-20T05:00:00.000Z",
+      "endDate": "2021-11-20T05:00:00.000Z",
       "category": "pool",
-      "releasedAt": "2021-11-12T17:54:15.529Z",
+      "releasedAt": "2021-11-16T10:11:39.770Z",
       "notes": "Use Great Value Shock",
       "schedule": "weekly",
-      "isDeleted": false
-    },
-    {
-      "id": 15,
-      "title": "Floss",
-      "startDate": "2021-11-11T05:00:00.000Z",
-      "endDate": "2039-12-31T05:00:00.000Z",
-      "category": "hygiene",
-      "releasedAt": "2021-11-12T16:41:08.426Z",
-      "notes": "Floss before bed.",
-      "schedule": "daily",
-      "isDeleted": false
+      "isDeleted": false,
+      "isNew": null,
+      "isRecurring": true
     },
     {
       "id": 16,
@@ -50,76 +44,50 @@
       "startDate": "2021-11-25T05:00:00.000Z",
       "endDate": "2021-11-25T05:00:00.000Z",
       "category": "bill",
-      "releasedAt": "2021-11-12T16:44:44.031Z",
+      "releasedAt": "2021-11-18T15:42:41.685Z",
       "notes": "Spectrum is due first",
       "schedule": "monthly",
-      "isDeleted": false
-    },
-    {
-      "id": 17,
-      "title": "Feed Pets",
-      "startDate": "2021-11-11T05:00:00.000Z",
-      "endDate": "2039-12-31T05:00:00.000Z",
-      "category": "nutrition",
-      "releasedAt": "2021-11-12T16:49:36.378Z",
-      "notes": "Morning and evening",
-      "schedule": "custom",
-      "isDeleted": false
+      "isDeleted": false,
+      "isNew": null,
+      "isRecurring": true
     },
     {
       "id": 18,
       "title": "Drink Water",
-      "startDate": "2021-11-11T05:00:00.000Z",
-      "endDate": "2039-12-31T05:00:00.000Z",
+      "startDate": "2021-11-19T11:54:02.986Z",
+      "endDate": "2021-11-21T23:59:02.986Z",
       "category": "nutrition",
-      "releasedAt": "2021-11-12T16:50:40.920Z",
-      "notes": "Eight glasses every day -- you can do it. Be sure to stay close to a bathroom. At least, you won't have to call hydrate.",
-      "schedule": "custom",
-      "isDeleted": false
+      "releasedAt": "2021-11-16T10:35:28.691Z",
+      "notes": "Eight glasses",
+      "schedule": "daily",
+      "isDeleted": false,
+      "isNew": null,
+      "isRecurring": true
     },
     {
       "id": 19,
-      "title": "Angular University",
+      "title": "Angular University Payment",
       "startDate": "2021-11-25T05:00:00.000Z",
       "endDate": "2021-11-25T05:00:00.000Z",
       "category": "bill",
-      "releasedAt": "2021-11-12T16:46:25.779Z",
+      "releasedAt": "2021-11-18T15:42:33.895Z",
       "notes": "Welcome Back!",
       "schedule": "monthly",
-      "isDeleted": false
-    },
-    {
-      "id": 20,
-      "title": "Take Vitamins",
-      "startDate": "2021-11-11T05:00:00.000Z",
-      "endDate": "2039-12-31T05:00:00.000Z",
-      "category": "nutrition",
-      "releasedAt": "2021-11-12T16:40:50.251Z",
-      "notes": "List of vitamins...",
-      "schedule": "daily",
-      "isDeleted": false
+      "isDeleted": false,
+      "isNew": null,
+      "isRecurring": true
     },
     {
       "id": 21,
       "title": "Skim Pool",
-      "startDate": "2021-11-11T05:00:00.000Z",
-      "endDate": "2039-12-31T05:00:00.000Z",
+      "startDate": "2021-11-18T12:06:33.215Z",
+      "endDate": "2021-11-18T12:06:33.215Z",
       "category": "pool",
       "releasedAt": "2021-11-12T16:50:26.910Z",
       "notes": "Also, check basket.",
-      "schedule": "custom",
-      "isDeleted": false
-    },
-    {
-      "id": 22,
-      "title": "Walk",
-      "startDate": "2021-11-11T05:00:00.000Z",
-      "endDate": "2039-12-31T05:00:00.000Z",
-      "category": "exercise",
-      "releasedAt": "2021-11-12T16:37:58.108Z",
-      "notes": "1 miles three times a week",
       "schedule": "daily",
-      "isDeleted": null
+      "isDeleted": false,
+      "isRecurring": true
     },
     {
       "id": 23,
@@ -130,29 +98,154 @@
       "releasedAt": "2021-11-12T15:47:50.753Z",
       "notes": null,
       "schedule": "once",
-      "isDeleted": null
+      "isDeleted": null,
+      "isRecurring": false
     },
     {
       "id": 24,
       "title": "Student Loan Payment",
-      "startDate": "2021-11-14T05:00:00.000Z",
-      "endDate": "2021-11-14T05:00:00.000Z",
+      "startDate": "2021-12-14T05:00:00.000Z",
+      "endDate": "2021-12-14T05:00:00.000Z",
       "category": "bill",
-      "releasedAt": "2021-11-12T16:48:03.295Z",
+      "releasedAt": "2021-11-16T10:08:42.631Z",
       "notes": "Build that credit",
       "schedule": "monthly",
-      "isDeleted": null
+      "isDeleted": null,
+      "isNew": null,
+      "isRecurring": true
     },
     {
       "id": 25,
       "title": "Get Camping Gear",
-      "startDate": "2021-11-13T05:00:00.000Z",
-      "endDate": "2021-11-13T05:00:00.000Z",
+      "startDate": "2021-11-20T05:00:00.000Z",
+      "endDate": "2021-11-21T05:00:00.000Z",
       "category": "chore",
-      "releasedAt": "2021-11-12T17:55:58.805Z",
+      "releasedAt": "2021-11-15T14:05:54.782Z",
       "notes": "Vacay!",
       "schedule": "once",
-      "isDeleted": null
+      "isDeleted": null,
+      "isRecurring": false
+    },
+    {
+      "id": 26,
+      "title": "Prune Bougainvillea",
+      "startDate": "2021-11-16T05:00:00.000Z",
+      "endDate": "2039-12-31T05:00:00.000Z",
+      "category": "chore",
+      "releasedAt": "2021-11-16T09:32:07.517Z",
+      "notes": "Don't forget to fertilize",
+      "schedule": "monthly",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 27,
+      "title": "Christmas Shopping",
+      "startDate": "2021-11-01T04:00:00.000Z",
+      "endDate": "2021-12-23T05:00:00.000Z",
+      "category": "family",
+      "releasedAt": "2021-11-16T12:05:26.053Z",
+      "notes": "Morgan: Meeple Earrings",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isNew": null,
+      "isRecurring": true
+    },
+    {
+      "id": 29,
+      "title": "Eat",
+      "startDate": "2021-11-15T05:00:00.000Z",
+      "endDate": "2039-12-31T05:00:00.000Z",
+      "category": "nutrition",
+      "releasedAt": "2021-11-16T10:33:42.514Z",
+      "notes": "Begin diet",
+      "schedule": "custom",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 30,
+      "title": "Property Tax Payment",
+      "startDate": "2021-11-01T04:00:00.000Z",
+      "endDate": "2022-03-31T04:00:00.000Z",
+      "category": "bill",
+      "releasedAt": "2021-11-17T12:42:17.397Z",
+      "notes": "Pay when ready",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 32,
+      "title": "Morgan's Birthday",
+      "startDate": "2022-08-16T04:00:00.000Z",
+      "endDate": "2022-09-16T04:00:00.000Z",
+      "category": "family",
+      "releasedAt": "2021-11-17T12:47:24.950Z",
+      "notes": "More Meeples?",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 33,
+      "title": "Mother's Birthday",
+      "startDate": "2022-08-20T04:00:00.000Z",
+      "endDate": "2022-09-20T04:00:00.000Z",
+      "category": "family",
+      "releasedAt": "2021-11-17T13:25:03.463Z",
+      "notes": "Stock in Starbucks?!",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isNew": null
+    },
+    {
+      "id": 34,
+      "title": "Father's Birthday",
+      "startDate": "2022-06-10T04:00:00.000Z",
+      "endDate": "2022-07-10T04:00:00.000Z",
+      "category": "family",
+      "releasedAt": "2021-11-17T12:49:13.439Z",
+      "notes": "More cards?",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 35,
+      "title": "Alex's Birthday",
+      "startDate": "2022-07-10T04:00:00.000Z",
+      "endDate": "2022-08-10T04:00:00.000Z",
+      "category": "family",
+      "releasedAt": "2021-11-17T13:25:26.011Z",
+      "notes": "Even more Steam money?",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 36,
+      "title": "Alex's Graduation",
+      "startDate": "2022-04-26T04:00:00.000Z",
+      "endDate": "2022-05-26T04:00:00.000Z",
+      "category": "family",
+      "releasedAt": "2021-11-17T13:36:38.742Z",
+      "notes": "Last day of school on the 26th.",
+      "schedule": "yearly",
+      "isDeleted": false,
+      "isRecurring": true
+    },
+    {
+      "id": 37,
+      "title": "Take Vitamins",
+      "startDate": "2021-11-18T13:46:21.439Z",
+      "endDate": "2021-11-19T05:00:00.000Z",
+      "category": "nutrition",
+      "releasedAt": "2021-11-17T13:46:21.441Z",
+      "notes": "List of vitamins...",
+      "schedule": "daily",
+      "isDeleted": false,
+      "isRecurring": true
     }
   ]
 }
